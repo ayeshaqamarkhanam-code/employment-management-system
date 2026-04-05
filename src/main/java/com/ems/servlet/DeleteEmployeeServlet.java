@@ -18,4 +18,3 @@ public class DeleteEmployeeServlet extends HttpServlet{
         response.sendRedirect("listEmployees");
     }
 }
-
