@@ -10,14 +10,15 @@ import java.util.List;
 
 @WebServlet("/listEmployees")
 public class ListEmployeeServlet extends HttpServlet {
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException{
         EmployeeDAO employeeDAO = new EmployeeDAO();
         List<Employee> employees = employeeDAO.getAllEmployees();
 
         request.setAttribute("employees", employees);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/web/html/listEmployees.html");
-        dispatcher.forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/listEmployees.jsp")
+               .forward(request, response);
     }
     
 }
