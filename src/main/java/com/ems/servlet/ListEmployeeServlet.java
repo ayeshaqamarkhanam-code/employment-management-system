@@ -20,5 +20,4 @@ public class ListEmployeeServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/views/listEmployees.jsp")
                .forward(request, response);
     }
-    
 }
